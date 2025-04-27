@@ -1,26 +1,46 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "unknow-sk/laravel-pdf-to",
+    "description": "Laravel package for converting pdf to text, html or image",
     "keywords": [
-        ":vendor_name",
+        "Unknow.sk",
         "laravel",
-        ":package_slug"
+        "laravel-pdf-to",
+        "laravel-pdf-to-text",
+        "laravel-pdf-to-html",
+        "laravel-pdf-to-image",
+        "laravel-pdf-to-png",
+        "laravel-pdf-to-jpg"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/unknow-sk/laravel-pdf-to",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
-            "role": "Developer"
+            "name": "Unknow.sk",
+            "email": "unknow@unknow.sk",
+            "role": "Owner"
+        },
+        {
+            "name": "Ján Hamrák",
+            "email": "hamrak@kcorp.sk",
+            "role": "Maintainer"
         }
     ],
+    "version": "1.0.0",
+    "type": "library",
     "require": {
-        "php": "^8.4",
+        "php": "^8.2",
+        "ext-fileinfo": "*",
+        "illuminate/contracts": "^10.0||^11.0||^12.0",
+        "illuminate/support": "^10.0||^11.0||^12.0",
         "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0||^12.0"
+        "spatie/pdf-to-text": "^1.54",
+        "symfony/process": "^4.0|^5.0|^6.0|^7.0"
+    },
+    "suggest": {
+        "spatie/pdf-to-image": "Required ^3.1 for pdf to image conversion via Imagick"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "laravel/pint": "^1.14",
         "nunomaduro/collision": "^8.1.1||^7.10.0",
         "larastan/larastan": "^2.9||^3.0",
@@ -31,18 +51,17 @@
         "phpstan/extension-installer": "^1.3||^2.0",
         "phpstan/phpstan-deprecation-rules": "^1.1||^2.0",
         "phpstan/phpstan-phpunit": "^1.3||^2.0",
-        "spatie/laravel-ray": "^1.35"
+        "spatie/laravel-ray": "^1.35",
+        "spatie/pdf-to-image": "^3.1"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "UnknowSk\\LaravelPdfTo\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "UnknowSk\\LaravelPdfTo\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -63,10 +82,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "LaravelPdfToServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelPdfTo": "LaravelPdfTo"
             }
         }
     },
