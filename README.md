@@ -1,5 +1,5 @@
 # Laravel PDF To
-[![GitHub](https://img.shields.io/github/license/unknow-sk/laravel-pdf-to?style=flat-square)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/unknow-sk/laravel-pdf-to.svg?style=flat-square)](https://packagist.org/packages/unknow-sk/laravel-pdf-to)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/unknow-sk/laravel-pdf-to/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/unknow-sk/laravel-pdf-to/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/unknow-sk/laravel-pdf-to/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/unknow-sk/laravel-pdf-to/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
@@ -9,7 +9,7 @@ Laravel package for extracting Text/Html from a PDF or converting it to images (
 
 ## Support us
 
-[<img src="https://unknow.sk/logo.svg" width="288px" />](https://opencollective.com/unknow-sk)
+[<img src="https://unknow.sk/logo.svg" width="288px" style="background-color:#0d1116;" />](https://opencollective.com/unknow-sk)
 
 We invest a lot of time and give our hearts to work in (Open Source)[https://unknow.sk].
 
