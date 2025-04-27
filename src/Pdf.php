@@ -78,6 +78,16 @@ class Pdf extends \Spatie\PdfToText\Pdf
     }
 
     /**
+     * Set the PDF to Text to convert via pdftotext.
+     *
+     * @throws BinaryNotFoundException
+     */
+    protected function findPdfToText(): string
+    {
+        return $this->findPdfTo('pdftotext');
+    }
+
+    /**
      * Finds the binary in the common paths.
      *
      * @throws BinaryNotFoundException
