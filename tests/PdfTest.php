@@ -8,5 +8,5 @@ it('throws exception for missing binary', function () {
 
     $this->expectException(BinaryNotFoundException::class);
 
-    $pdf->findPdfTo(['/nonexistent/path']);
+    $pdf->findPdfTo('testing');
 });

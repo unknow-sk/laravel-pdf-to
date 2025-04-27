@@ -113,7 +113,7 @@ class Pdf extends \Spatie\PdfToText\Pdf
             return $output[0];
         }
 
-        return $executable;
+        throw new BinaryNotFoundException('Could not find the binary: '.$executable);
     }
 
     /**
