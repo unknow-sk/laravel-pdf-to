@@ -254,11 +254,11 @@ class Pdf extends \Spatie\PdfToText\Pdf
 
         // Match all image tags in the HTML
         preg_match_all('/<img[^>]+src=["\']([^"\']+)["\'][^>]*>/i', $htmlContent, $imgMatches);
-        $imagePaths = $imgMatches[1] ?? [];
+        $imagePaths = $imgMatches[1];
 
         // Match all background-image URLs in style attributes
         preg_match_all('/background-image:\s*url\(["\']?([^"\')]+)["\']?\)/i', $htmlContent, $styleMatches);
-        $stylePaths = $styleMatches[1] ?? [];
+        $stylePaths = $styleMatches[1];
 
         $allPaths = array_merge($imagePaths, $stylePaths);
 
