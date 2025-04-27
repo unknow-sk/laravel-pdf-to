@@ -57,7 +57,8 @@ jobs:
       - name: Install required binaries (Ubuntu)
         if: runner.os == 'Linux'
         run: |
-          sudo apt-get update && sudo apt install poppler-utils && make install
+          sudo apt-get update --allow-releaseinfo-change
+          sudo apt-get install -y poppler-utils
 
       - name: Install required binaries (Windows)
         if: runner.os == 'Windows'
