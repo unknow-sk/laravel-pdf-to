@@ -51,6 +51,13 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+      - name: Fix Ondrej PHP PPA issue
+        if: runner.os == 'Linux'
+        run: |
+          sudo add-apt-repository -r ppa:ondrej/php || true
+          sudo add-apt-repository ppa:ondrej/php -y
+          sudo apt-get update
+
       - name: Install required binaries (Ubuntu)
         if: runner.os == 'Linux'
         run: |
