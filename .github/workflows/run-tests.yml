@@ -55,6 +55,8 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo add-apt-repository -r ppa:ondrej/php || true
+          sudo rm -f /etc/apt/sources.list.d/ondrej-php-ubuntu-php*.list
+          sudo rm -f /usr/share/keyrings/ondrej-php-keyring.gpg
           sudo add-apt-repository ppa:ondrej/php -y
           sudo apt-get update
 
