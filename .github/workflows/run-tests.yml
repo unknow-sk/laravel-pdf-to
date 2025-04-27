@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [macos-latest, windows-latest]
+        os: [macos-latest, windows-latest, ubuntu-latest]
         php: [8.4, 8.3, 8.2]
         laravel: [12.*, 11.*]
         stability: [prefer-lowest, prefer-stable]
@@ -57,12 +57,14 @@ jobs:
       - name: Install required binaries (Ubuntu)
         if: runner.os == 'Linux'
         run: |
-          sudo apt-get update && sudo apt-get install -y poppler-utils
+          sudo apt-get update && sudo apt install poppler-utils && make install
 
       - name: Install required binaries (Windows)
         if: runner.os == 'Windows'
         run: |
-          choco install poppler-tools
+          curl -L -o poppler.zip https://github.com/oschwartz10612/poppler-windows/releases/download/v23.11.0-0/Release-23.11.0-0.zip
+          unzip poppler.zip -d poppler
+          echo "${{ github.workspace }}/poppler/Library/bin" >> $GITHUB_PATH
 
       - name: Verify binary paths
         run: |
