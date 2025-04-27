@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-latest]
+        os: [windows-latest] # [ubuntu-latest, macos-latest]
         php: [8.4, 8.3, 8.2]
         laravel: [12.*, 11.*]
         stability: [prefer-lowest, prefer-stable]
@@ -64,13 +64,14 @@ jobs:
         run: |
           curl -L -o poppler.zip https://github.com/oschwartz10612/poppler-windows/releases/download/v23.11.0-0/Release-23.11.0-0.zip
           unzip poppler.zip -d poppler
-          echo "${{ github.workspace }}/poppler/Library/bin" >> $GITHUB_PATH
+          echo "${{ github.workspace }}/poppler/poppler-23.11.0/Library/bin" >> $GITHUB_PATH
+          export PATH="${{ github.workspace }}/poppler/poppler-23.11.0/Library/bin:$PATH"
 
       - name: Verify binary paths
         run: |
-          which pdftotext || echo 'pdftotext not found'
-          which pdftohtml || echo 'pdftohtml not found'
-          which pdftoppm || echo 'pdftoppm not found'
+          pdftotext -v || echo 'pdftotext not found'
+          pdftohtml -v || echo 'pdftohtml not found'
+          pdftoppm -v || echo 'pdftoppm not found'
 
       - name: Install dependencies
         run: |
