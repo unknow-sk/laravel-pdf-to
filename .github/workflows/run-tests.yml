@@ -73,6 +73,18 @@ jobs:
           pdftohtml -v || echo 'pdftohtml not found'
           pdftoppm -v || echo 'pdftoppm not found'
 
+      - name: Get path of required binaries (Windows)
+        if: runner.os == 'Windows'
+          where pdftotext || echo 'pdftotext not found'
+          where pdftohtml || echo 'pdftohtml not found'
+          where pdftoppm || echo 'pdftoppm not found'
+
+      - name: Get path of required binaries (macOs,Linux)
+        if: runner.os != 'Windows'
+          which pdftotext || echo 'pdftotext not found'
+          which pdftohtml || echo 'pdftohtml not found'
+          which pdftoppm || echo 'pdftoppm not found'
+
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
