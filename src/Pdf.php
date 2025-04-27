@@ -102,7 +102,8 @@ class Pdf extends \Spatie\PdfToText\Pdf
             return realpath($executable) ?: $executable;
         }
 
-        $command = stripos(PHP_OS_FAMILY, 'WIN') === 0 ? 'where' : 'which';
+        $is_windows = stripos(PHP_OS_FAMILY, 'WIN') === 0;
+        $command = $is_windows ? 'where' : 'which';
         $output = null;
         $returnVar = 0;
 
@@ -111,6 +112,10 @@ class Pdf extends \Spatie\PdfToText\Pdf
         if ($returnVar === 0 && ! empty($output)) {
             // Return the first found path
             return $output[0];
+        }
+
+        if ($is_windows) {
+            return $executable;
         }
 
         throw new BinaryNotFoundException('Could not find the binary: '.$executable);
