@@ -51,6 +51,23 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+      - name: Install required binaries (Ubuntu)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+
+      - name: Install required binaries (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          choco install poppler-tools
+
+      - name: Verify binary paths
+        run: |
+          which pdftotext || echo 'pdftotext not found'
+          which pdftohtml || echo 'pdftohtml not found'
+          which pdftoppm || echo 'pdftoppm not found'
+
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
