@@ -54,13 +54,7 @@ class Pdf extends \Spatie\PdfToText\Pdf
      */
     protected function findPdfToHtml(): string
     {
-        return $this->findPdfTo([
-            '/usr/bin/pdftohtml',          // Common on Linux
-            '/usr/local/bin/pdftohtml',    // Common on Linux
-            '/opt/homebrew/bin/pdftohtml', // Homebrew on macOS (Apple Silicon)
-            '/opt/local/bin/pdftohtml',    // MacPorts on macOS
-            '/usr/local/bin/pdftohtml',    // Homebrew on macOS (Intel)
-        ]);
+        return $this->findPdfTo('pdftohtml');
     }
 
     /**
@@ -70,13 +64,7 @@ class Pdf extends \Spatie\PdfToText\Pdf
      */
     protected function findPdfToPpm(): string
     {
-        return $this->findPdfTo([
-            '/usr/bin/pdftoppm',          // Common on Linux
-            '/usr/local/bin/pdftoppm',    // Common on Linux
-            '/opt/homebrew/bin/pdftoppm', // Homebrew on macOS (Apple Silicon)
-            '/opt/local/bin/pdftoppm',    // MacPorts on macOS
-            '/usr/local/bin/pdftoppm',    // Homebrew on macOS (Intel)
-        ]);
+        return $this->findPdfTo('pdftoppm');
     }
 
     /**
@@ -86,13 +74,7 @@ class Pdf extends \Spatie\PdfToText\Pdf
      */
     protected function findPdfToCairo(): string
     {
-        return $this->findPdfTo([
-            '/usr/bin/pdftocairo',          // Common on Linux
-            '/usr/local/bin/pdftocairo',    // Common on Linux
-            '/opt/homebrew/bin/pdftocairo', // Homebrew on macOS (Apple Silicon)
-            '/opt/local/bin/pdftocairo',    // MacPorts on macOS
-            '/usr/local/bin/pdftocairo',    // Homebrew on macOS (Intel)
-        ]);
+        return $this->findPdfTo('pdftocairo');
     }
 
     /**
@@ -100,12 +82,34 @@ class Pdf extends \Spatie\PdfToText\Pdf
      *
      * @throws BinaryNotFoundException
      */
-    public function findPdfTo(array $commonPaths): string
+    public function findPdfTo($executable, array $commonPaths = [
+        '/usr/bin',          // Common on Linux
+        '/usr/local/bin',    // Common on Linux
+        '/opt/homebrew/bin', // Homebrew on macOS (Apple Silicon)
+        '/opt/local/bin',    // MacPorts on macOS
+        '/usr/local/bin',    // Homebrew on macOS (Intel)
+    ]): string
     {
         foreach ($commonPaths as $path) {
             if (is_executable($path)) {
                 return $path;
             }
+        }
+
+        if (is_executable($executable)) {
+            // Already a full path
+            return realpath($executable) ?: $executable;
+        }
+
+        $command = stripos(PHP_OS_FAMILY, 'WIN') === 0 ? 'where' : 'which';
+        $output = null;
+        $returnVar = 0;
+
+        exec("$command ".escapeshellarg($executable), $output, $returnVar);
+
+        if ($returnVar === 0 && ! empty($output)) {
+            // Return the first found path
+            return $output[0];
         }
 
         throw new BinaryNotFoundException('The required binary was not found or is not executable.');
