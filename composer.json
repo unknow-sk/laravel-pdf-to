@@ -79,10 +79,10 @@
         },
         "laravel": {
             "aliases": {
-                "LaravelPdfTo": "LaravelPdfTo"
+                "LaravelPdfTo": "UnknowSk\\LaravelPdfTo\\LaravelPdfTo"
             },
             "providers": [
-                "LaravelPdfToServiceProvider"
+                "UnknowSk\\LaravelPdfTo\\LaravelPdfToServiceProvider"
             ]
         }
     },
