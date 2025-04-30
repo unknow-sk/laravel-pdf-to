@@ -27,19 +27,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@4c5d2f3b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8
+      - uses: actions/checkout@v4.0.0
         with:
           fetch-depth: 0  # Fetch the entire history for better security
           ref: ${{ github.ref }}  # Ensure the correct branch or commit is checked out
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@2c0d2f3b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8
+        uses: shivammathur/setup-php@v2.25.0
         with:
           php-version: '8.4'
           coverage: none
 
       - name: Install composer dependencies
-        uses: ramsey/composer-install@3c0d2f3b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b8
+        uses: ramsey/composer-install@v3.2.0
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan --error-format=github
