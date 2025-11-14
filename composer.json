@@ -1,11 +1,11 @@
 {
-    "name": "unknow-sk/laravel-pdf-to",
+    "name": "hub-io/laravel-pdf-to",
     "description": "Laravel package for converting pdf to text, html or image",
     "license": "MIT",
     "type": "library",
     "version": "1.0.0",
     "keywords": [
-        "Unknow.sk",
+        "Hubio s.r.o.",
         "laravel",
         "laravel-pdf-to",
         "laravel-pdf-to-text",
@@ -16,8 +16,8 @@
     ],
     "authors": [
         {
-            "name": "Unknow.sk",
-            "email": "unknow@unknow.sk",
+            "name": "Hubio s.r.o.",
+            "email": "hamrak@hubio.sk",
             "role": "Owner"
         },
         {
@@ -26,7 +26,7 @@
             "role": "Maintainer"
         }
     ],
-    "homepage": "https://github.com/unknow-sk/laravel-pdf-to",
+    "homepage": "https://github.com/hub-io/laravel-pdf-to",
     "require": {
         "php": "^8.2",
         "ext-fileinfo": "*",
@@ -58,12 +58,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "UnknowSk\\LaravelPdfTo\\": "src/"
+            "Hubio\\LaravelPdfTo\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "UnknowSk\\LaravelPdfTo\\Tests\\": "tests/"
+            "Hubio\\LaravelPdfTo\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -79,10 +79,10 @@
         },
         "laravel": {
             "aliases": {
-                "LaravelPdfTo": "UnknowSk\\LaravelPdfTo\\LaravelPdfTo"
+                "LaravelPdfTo": "Hubio\\LaravelPdfTo\\LaravelPdfTo"
             },
             "providers": [
-                "UnknowSk\\LaravelPdfTo\\LaravelPdfToServiceProvider"
+                "Hubio\\LaravelPdfTo\\LaravelPdfToServiceProvider"
             ]
         }
     },

@@ -1,10 +1,10 @@
 <?php
 
-namespace UnknowSk\LaravelPdfTo\Commands;
+namespace Hubio\LaravelPdfTo\Commands;
 
 use Illuminate\Console\Command;
 use Throwable;
-use UnknowSk\LaravelPdfTo\Facades\LaravelPdfTo;
+use Hubio\LaravelPdfTo\Facades\LaravelPdfTo;
 
 class PdfToImageCommand extends Command
 {

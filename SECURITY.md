@@ -16,7 +16,7 @@ If you discover a security vulnerability in **laravel-pdf-to**, please **do not 
 
 Instead, please contact us directly:
 
-- 📧 Email: [unknow@unknow.sk](mailto:unknow@unknow.sk)
+- 📧 Email: [hamrak@hubio.sk](mailto:hamrak@hubio.sk)
 
 We will investigate promptly. Responsible disclosure is greatly appreciated, and we will work with you to quickly resolve any issues.
 

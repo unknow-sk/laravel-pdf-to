@@ -1,6 +1,6 @@
 <?php
 
-use UnknowSk\LaravelPdfTo\LaravelPdfToServiceProvider;
+use Hubio\LaravelPdfTo\LaravelPdfToServiceProvider;
 
 it('registers the service provider', function () {
     $provider = new LaravelPdfToServiceProvider(app());

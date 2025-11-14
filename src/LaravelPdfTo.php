@@ -1,6 +1,6 @@
 <?php
 
-namespace UnknowSk\LaravelPdfTo;
+namespace Hubio\LaravelPdfTo;
 
 use Closure;
 use Illuminate\Config\Repository;

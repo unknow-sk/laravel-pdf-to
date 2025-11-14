@@ -1,7 +1,7 @@
 <?php
 
 use Spatie\PdfToText\Exceptions\PdfNotFound;
-use UnknowSk\LaravelPdfTo\LaravelPdfTo;
+use Hubio\LaravelPdfTo\LaravelPdfTo;
 
 it('can set and retrieve configuration', function () {
     $instance = new LaravelPdfTo;

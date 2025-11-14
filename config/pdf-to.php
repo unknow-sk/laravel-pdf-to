@@ -1,6 +1,6 @@
 <?php
 
-// config for UnknowSk/LaravelPdfTo
+// config for Hubio/LaravelPdfTo
 return [
     /**
      * Set the pdftotext binary path manually

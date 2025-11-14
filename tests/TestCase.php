@@ -1,9 +1,9 @@
 <?php
 
-namespace UnknowSk\LaravelPdfTo\Tests;
+namespace Hubio\LaravelPdfTo\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use UnknowSk\LaravelPdfTo\LaravelPdfToServiceProvider;
+use Hubio\LaravelPdfTo\LaravelPdfToServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -1,9 +1,9 @@
 # Laravel PDF To
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/unknow-sk/laravel-pdf-to.svg?style=flat-square)](https://packagist.org/packages/unknow-sk/laravel-pdf-to)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/unknow-sk/laravel-pdf-to/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/unknow-sk/laravel-pdf-to/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/unknow-sk/laravel-pdf-to/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/unknow-sk/laravel-pdf-to/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/unknow-sk/laravel-pdf-to.svg?style=flat-square)](https://packagist.org/packages/unknow-sk/laravel-pdf-to)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hub-io/laravel-pdf-to.svg?style=flat-square)](https://packagist.org/packages/hub-io/laravel-pdf-to)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hub-io/laravel-pdf-to/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hub-io/laravel-pdf-to/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hub-io/laravel-pdf-to/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hub-io/laravel-pdf-to/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/hub-io/laravel-pdf-to.svg?style=flat-square)](https://packagist.org/packages/hub-io/laravel-pdf-to)
 
 Laravel package for extracting Text/Html from a PDF or converting it to images (PNG, JPeG).
 
@@ -11,14 +11,14 @@ Laravel package for extracting Text/Html from a PDF or converting it to images (
 
 [<img src="https://unknow.sk/logo.svg" width="288px" style="background-color:#0d1116;" />](https://opencollective.com/unknow-sk)
 
-We invest a lot of time and give our hearts to work in [Open Source](https://unknow.sk).
+We invest a lot of time and give our hearts to work in [Open Source](https://hubio.sk).
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require unknow-sk/laravel-pdf-to
+composer require hub-io/laravel-pdf-to
 ```
 
 You can publish the config file with:
@@ -96,7 +96,7 @@ For text extraction, this package uses the [Spatie/pdf-to-text](https://github.c
 ### Extract Text from PDF
 
 ```php
-use UnknowSk\LaravelPdfTo\Facades\LaravelPdfTo;
+use Hubio\LaravelPdfTo\Facades\LaravelPdfTo;
 
 $text = LaravelPdfTo::setFile('path/to/your/file.pdf')
     ->setTimeout(120) // optionally
@@ -107,7 +107,7 @@ echo $text;
 ### Convert PDF to HTML
 
 ```php
-use UnknowSk\LaravelPdfTo\Facades\LaravelPdfTo;
+use Hubio\LaravelPdfTo\Facades\LaravelPdfTo;
 
 $html = LaravelPdfTo::setFile('path/to/your/file.pdf')
     ->setConfig(['options' => [...]]) // optionally
@@ -119,7 +119,7 @@ echo $html;
 ### Convert PDF to Images
 
 ```php
-use UnknowSk\LaravelPdfTo\Facades\LaravelPdfTo;
+use Hubio\LaravelPdfTo\Facades\LaravelPdfTo;
 
 $image = LaravelPdfTo::setFile('path/to/your/file.pdf')
     ->setTimeout(180) // optionally
@@ -151,7 +151,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Unknow.sk](https://github.com/unknow-sk)
+- [Hubio s.r.o.](https://github.com/hub-io)
 - [All Contributors](../../contributors)
 
 ## License

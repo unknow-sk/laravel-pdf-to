@@ -1,7 +1,7 @@
 <?php
 
 use Spatie\PdfToText\Exceptions\BinaryNotFoundException;
-use UnknowSk\LaravelPdfTo\Pdf;
+use Hubio\LaravelPdfTo\Pdf;
 
 it('throws exception for missing binary', function () {
     $pdf = new Pdf;
