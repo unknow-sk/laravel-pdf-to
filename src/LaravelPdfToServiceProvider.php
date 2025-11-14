@@ -2,11 +2,11 @@
 
 namespace Hubio\LaravelPdfTo;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Hubio\LaravelPdfTo\Commands\PdfToHtmlCommand;
 use Hubio\LaravelPdfTo\Commands\PdfToImageCommand;
 use Hubio\LaravelPdfTo\Commands\PdfToTextCommand;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LaravelPdfToServiceProvider extends PackageServiceProvider
 {

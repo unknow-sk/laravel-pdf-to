@@ -2,9 +2,9 @@
 
 namespace Hubio\LaravelPdfTo\Commands;
 
+use Hubio\LaravelPdfTo\Facades\LaravelPdfTo;
 use Illuminate\Console\Command;
 use Throwable;
-use Hubio\LaravelPdfTo\Facades\LaravelPdfTo;
 
 class PdfToHtmlCommand extends Command
 {
